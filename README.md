@@ -1,4 +1,4 @@
-##Equal Groups K-Means Clustering
+## Equal Groups K-Means Clustering
 
 This is a k-means variation that produces clusters of the same size utilizing the
 scikit-learn Kmeans methods and associated utilities.
@@ -11,9 +11,9 @@ Please note that this implementation only works in scikit-learn 17.X as later
 versions having breaking changes to this implementation. Also sparse matrices
 are not yet supported.
 
-##Usage
+## Usage
 
-Use just like you would utilize the (scikit-learn Kmeans )[http://scikit-learn.org/0.17/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans]
+Use just like you would utilize the [scikit-learn Kmeans](http://scikit-learn.org/0.17/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans) class
 
 > from clustering.equal_groups import EqualGroupsKMeans
 
@@ -27,14 +27,14 @@ Use just like you would utilize the (scikit-learn Kmeans )[http://scikit-learn.o
 
 
 
-##Performance
+## Performance
 
 The performance of this implementation is very slow. It is relatively quick if
 the number observations is less than 500.
 
 Optimizations are readily accepted via pull-requests.
 
-##To Dos
+## To Dos
 - More test coverage
 - Add support for sparse matrices
 - Package for pypi
