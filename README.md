@@ -16,13 +16,17 @@ are not yet supported.
 Use just like you would utilize the [scikit-learn Kmeans](http://scikit-learn.org/0.17/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans) class
 
 > from clustering.equal_groups import EqualGroupsKMeans
-
+>
 > import numpy as np
+>
 > X = np.array([[1, 2], [1, 4], [1, 0], [4, 2], [4, 4], [4, 0]])
-
-> clf = EqualGroupsKMeans(n_clusters=2, random_state=0)
+>
+> clf = EqualGroupsKMeans(n_clusters=2)
+>
 > clf.fit(X)
+>
 > clf.labels_
+>
 
 
 
