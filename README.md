@@ -3,7 +3,7 @@
 This is a k-means variation that produces clusters of the same size utilizing the
 scikit-learn Kmeans methods and associated utilities.
 
-The same-size k-Means logic is the same as in the Elki Same-size k-Means Variation tutorial.
+The same-size k-Means logic is the same as found in the Elki Same-size k-Means Variation tutorial.
 
 https://elki-project.github.io/tutorial/same-size_k_means
 
