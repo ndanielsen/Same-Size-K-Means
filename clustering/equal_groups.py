@@ -422,7 +422,7 @@ def k_means(X, n_clusters, init='k-means++', precompute_distances='auto',
 
 def _kmeans_single(X, n_clusters, x_squared_norms, max_iter=300,
                    init='k-means++', verbose=False, random_state=None,
-                   tol=1e-4, precompute_distances=True):
+                   tol=1e-4, precompute_distances=True, sample_weight=None):
     """A single run of k-means, assumes preparation completed prior.
     Parameters
     ----------
@@ -469,6 +469,10 @@ def _kmeans_single(X, n_clusters, x_squared_norms, max_iter=300,
     n_iter : int
         Number of iterations run.
     """
+
+    if sample_weight == None:
+        sample_weight = np.ones(X.shape[0])
+
     random_state = check_random_state(random_state)
 
     best_labels, best_inertia, best_centers = None, None, None
@@ -493,10 +497,10 @@ def _kmeans_single(X, n_clusters, x_squared_norms, max_iter=300,
 
         # computation of the means is also called the M-step of EM
         if sp.issparse(X):
-            centers = _k_means._centers_sparse(X, labels, n_clusters,
+            centers = _k_means._centers_sparse(X, sample_weight, labels, n_clusters,
                                                distances)
         else:
-            centers = _k_means._centers_dense(X, labels, n_clusters, distances)
+            centers = _k_means._centers_dense(X, sample_weight, labels, n_clusters, distances)
 
         if verbose:
             print("Iteration %2d, inertia %.3f" % (i, inertia))
