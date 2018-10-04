@@ -254,7 +254,7 @@ class EqualGroupsKMeans(BaseEstimator, ClusterMixin, TransformerMixin):
 def k_means(X, n_clusters, init='k-means++', precompute_distances='auto',
             n_init=10, max_iter=300, verbose=False,
             tol=1e-4, random_state=None, copy_x=True, n_jobs=1,
-            return_n_iter=False):
+            return_n_iter=False, sample_weight=None):
     """K-means clustering algorithm.
     Read more in the :ref:`User Guide <k_means>`.
     Parameters
@@ -383,7 +383,7 @@ def k_means(X, n_clusters, init='k-means++', precompute_distances='auto',
             labels, inertia, centers, n_iter_ = _kmeans_single(
                 X, n_clusters, max_iter=max_iter, init=init, verbose=verbose,
                 precompute_distances=precompute_distances, tol=tol,
-                x_squared_norms=x_squared_norms, random_state=random_state)
+                x_squared_norms=x_squared_norms, random_state=random_state, sample_weight=sample_weight)
             # determine if these results are the best so far
             if best_inertia is None or inertia < best_inertia:
                 best_labels = labels.copy()
