@@ -495,6 +495,7 @@ def _kmeans_single(X, n_clusters, x_squared_norms, max_iter=300,
                             precompute_distances=precompute_distances,
                             distances=distances)
 
+        sample_weight = [1.0] * np.asarray(len(labels))
         # computation of the means is also called the M-step of EM
         if sp.issparse(X):
             centers = _k_means._centers_sparse(X, sample_weight, labels, n_clusters,
@@ -616,6 +617,7 @@ def _labels_inertia_precompute_dense(X, x_squared_norms, centers, distances):
     inertia : float
         Sum of distances of samples to their closest cluster center.
     """
+    centers = np.nan_to_num(centers)
     n_samples = X.shape[0]
     k = centers.shape[0]
     all_distances = euclidean_distances(centers, X, x_squared_norms,

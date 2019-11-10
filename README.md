@@ -1,5 +1,7 @@
 ## Equal Groups K-Means Clustering
 
+[![Build Status](https://travis-ci.com/santolucito/Same-Size-K-Means.svg?branch=master)](https://travis-ci.com/santolucito/Same-Size-K-Means)
+
 This is a k-means variation that produces clusters of the same size utilizing the
 scikit-learn Kmeans methods and associated utilities.
 
