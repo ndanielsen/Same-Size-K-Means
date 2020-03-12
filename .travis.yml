@@ -1,8 +1,6 @@
 language: python
 python:
   - "3.6.7"
-  - "3.7.5" 
-  - "3.8.1"  
 install:
   - pip install -r tests/requirements.txt
 script:
