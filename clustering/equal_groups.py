@@ -495,7 +495,7 @@ def _kmeans_single(X, n_clusters, x_squared_norms, max_iter=300,
                             precompute_distances=precompute_distances,
                             distances=distances)
 
-        sample_weight = [1.0] * np.asarray(len(labels))
+        sample_weight = np.asarray([1.0] * len(labels))
         # computation of the means is also called the M-step of EM
         if sp.issparse(X):
             centers = _k_means._centers_sparse(X, sample_weight, labels, n_clusters,
